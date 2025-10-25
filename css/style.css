@@ -1,0 +1,204 @@
+html, body {
+    /* Establece que el elemento html y body deben tener al menos 
+       la altura total de la ventana de visualización (viewport) */
+    min-height: 100vh; 
+    /* Asegura que no haya márgenes no deseados en el borde */
+    margin: 0; 
+    padding: 0;
+}
+body {
+    background: linear-gradient(135deg, #000000, #c22c2c);
+    background-attachment: fixed;
+    /* Hace que el fondo no se mueva */
+    background-repeat: no-repeat;
+}
+
+.img-logo {
+    border-radius: 50%;
+}
+
+h1 {
+    font-family: Copperplate Gothic;
+}
+
+.carousel-caption p {
+    font-size: large;
+}
+
+.slide img {
+    height: 87vh; /* Altura para desktop */
+    filter: brightness(75%);
+}
+
+
+
+.register-form {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: .75rem;
+    overflow: hidden;
+    z-index: 1;
+    color: azure;
+}
+
+.register-form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.142);
+    border: 1px solid rgba(226, 5, 5, 0.71);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: -1;
+    /* Mantiene el blur detrás del contenido */
+}
+
+.register-form h2 {
+    font-family: Copperplate Gothic;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.purchase-form {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: .75rem;
+    overflow: hidden;
+    color: #1a1a3b;
+    z-index: 1;
+}
+
+.purchase-form::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: -1;
+    border-radius: .75rem;
+}
+
+.purchase-form h2 {
+    text-align: center;
+    font-family: Copperplate Gothic;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Centrado vertical y horizontal */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(90vh - 80px);
+    padding: 1rem;
+}
+
+/* Caja del login con blur */
+.login-form {
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: .75rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #1a1a3b;
+}
+
+.login-form h2 {
+    font-weight: 700;
+    color: #16163c;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #084298;
+}
+
+.info-container {
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 2rem;
+}
+
+.contact-form {
+    position: relative;
+    padding: 2.5rem;
+    border-radius: .75rem;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.contact-form .form-label {
+    color: white;
+    font-weight: 500;
+}
+
+/* Estilos Generales del Footer Minimalista */
+.site-footer-minimal {
+    background-color: #000000; /* Negro total */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px 0; /* Espaciado vertical reducido */
+    text-align: center; /* Centrar todo el contenido */
+    font-family: Arial, sans-serif; 
+}
+
+.footer-container-minimal {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo del Copyright */
+.copyright-minimal {
+    font-size: 0.9em;
+    margin-top: 15px;
+    color: #999999; /* Gris muy oscuro para hacerlo discreto */
+}
+
+/* Estilo de los Iconos de Redes Sociales (simulación sin librería) */
+.social-icons-minimal {
+    margin-bottom: 10px;
+}
+
+.social-icons-minimal a {
+    color: #ffffff; /* Iconos blancos */
+    text-decoration: none;
+    font-size: 1.5em; /* Tamaño de los iconos */
+    margin: 0 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.social-icons-minimal a:hover {
+    color: #ffd700; /* Efecto hover sutil (un pequeño toque de color) */
+}
+
+/* Estilos de Placeholders para los Iconos */
+/* NOTA: En un sitio real, reemplazarías esto con íconos SVG o una librería como Font Awesome */
+.icon-facebook-min::before { content: 'f'; font-weight: bold; }
+.icon-instagram-min::before { content: 'i'; font-style: italic; }
+.icon-twitter-min::before { content: 'x'; font-weight: bold; }

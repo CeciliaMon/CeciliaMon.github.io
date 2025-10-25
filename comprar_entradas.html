@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Entradas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar bg-dark navbar-expand-lg border-body z-3" data-bs-theme="dark">
+        <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="img/teatro.logo.jpg" class="img-logo d-inline-block align-text-center" width="60px" alt="logo"> Teatro StarLight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="salas.html">Salas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="cartelera.html">Cartelera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="sobre_nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <div id="auth-buttons-logged-out">
+                        <a type="button" class="btn btn-danger" href="registro_usuario.html">Registrarse</a>
+                        <a type="button" class="btn btn-secondary" href="inicio_sesion.html">Iniciar Sesion</a>
+                    </div>
+
+                    <div id="auth-buttons-logged-in" class="d-inline-flex d-none">
+                        <a id="logout-button" type="button" class="btn btn-danger" href="#">Cerrar Sesión</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center py-4">
+        <div class="purchase-form shadow-sm text-white">
+            <h2>Comprar Entradas</h2>
+
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="cantidad" class="form-label">Cantidad a comprar</label>
+                        <input type="number" class="form-control" id="cantidad" min="1" placeholder="Ej. 2">
+                        <div class="form-text text-white">Precio total dependerá de la cantidad seleccionada.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="horario" class="form-label">Días y horarios disponibles</label>
+                        <select class="form-select" id="horario">
+                            <option selected disabled>Selecciona...</option>
+                            <option>Viernes - 18:00</option>
+                            <option>Sábado - 20:00</option>
+                            <option>Domingo - 17:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="mb-3">
+                    <label for="formaPago" class="form-label">Formas de Pago</label>
+                    <select class="form-select" id="formaPago" required>
+                        <option selected disabled>Selecciona...</option>
+                        <option value="tarjeta">Tarjeta de Crédito o Débito</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="transferencia">Transferencia</option>
+                    </select>
+                </div>
+
+                <!-- Campos para TARJETA -->
+                <div id="pagoTarjeta" class="hidden">
+                    <h6 class="text-muted mb-3">Datos de la Tarjeta</h6>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="tipoTarjeta" class="form-label">Tipo de Tarjeta</label>
+                            <select class="form-select" id="tipoTarjeta">
+                                <option selected disabled>Selecciona...</option>
+                                <option>Visa</option>
+                                <option>MasterCard</option>
+                                <option>American Express</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="numTarjeta" class="form-label">Número de la Tarjeta</label>
+                            <input type="text" class="form-control" id="numTarjeta" maxlength="19"
+                                placeholder="XXXX XXXX XXXX XXXX">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fechaVenc" class="form-label">Fecha de vencimiento</label>
+                            <input type="month" class="form-control" id="fechaVenc">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cvc" class="form-label">CVC</label>
+                            <input type="text" class="form-control" id="cvc" maxlength="3" placeholder="123">
+                        </div>
+                        <div class="col-12">
+                            <label for="titular" class="form-label">Titular de la Tarjeta</label>
+                            <input type="text" class="form-control" id="titular"
+                                placeholder="Nombre como figura en la tarjeta">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campos para EFECTIVO -->
+                <div id="pagoEfectivo" class="hidden mt-4">
+                    <h6 class="text-muted mb-3">Pago en Efectivo</h6>
+                    <p class="form-text">Podrás abonar en boletería al retirar tus entradas.</p>
+                </div>
+
+                <!-- Campos para TRANSFERENCIA -->
+                <div id="pagoTransferencia" class="hidden mt-4">
+                    <h6 class="text-muted mb-3">Transferencia Bancaria</h6>
+                    <div class="mb-2">
+                        <label class="form-label">CBU / Alias</label>
+                        <input type="text" class="form-control" value="CBU: 123000456000789 | Alias: entradas.evento"
+                            readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label for="comprobante" class="form-label">Adjuntar comprobante</label>
+                        <input type="file" class="form-control" id="comprobante" accept=".pdf,.jpg,.png">
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-danger px-5" id="liveToastBtn">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/teatro.logo.jpg" class="rounded me-2" alt="..." width="20px">
+                    <strong class="me-auto">Teatro StarLight</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Compra Confirmada con Éxito!
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="#" aria-label="Síguenos en Facebook"><span class="icon-facebook-min"></span></a>
+            <a href="#" aria-label="Síguenos en Instagram"><span class="icon-instagram-min"></span></a>
+            <a href="#" aria-label="Síguenos en X (Twitter)"><span class="icon-twitter-min"></span></a>
+        </div>
+
+        <p class="copyright-minimal">
+            @Copyright Todos los derechos reservados - Teatro StarLight
+        </p>
+
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const formaPago = document.getElementById('formaPago');
+        const pagoTarjeta = document.getElementById('pagoTarjeta');
+        const pagoEfectivo = document.getElementById('pagoEfectivo');
+        const pagoTransferencia = document.getElementById('pagoTransferencia');
+
+        formaPago.addEventListener('change', () => {
+            // Oculta todos los bloques
+            pagoTarjeta.classList.add('hidden');
+            pagoEfectivo.classList.add('hidden');
+            pagoTransferencia.classList.add('hidden');
+
+            // Muestra el bloque correspondiente
+            switch (formaPago.value) {
+                case 'tarjeta':
+                    pagoTarjeta.classList.remove('hidden');
+                    break;
+                case 'efectivo':
+                    pagoEfectivo.classList.remove('hidden');
+                    break;
+                case 'transferencia':
+                    pagoTransferencia.classList.remove('hidden');
+                    break;
+            }
+        });
+
+        // Función para verificar el estado y actualizar el navbar
+        function updateNavbarAuth() {
+            const loggedOutContainer = document.getElementById('auth-buttons-logged-out');
+            const loggedInContainer = document.getElementById('auth-buttons-logged-in');
+            const logoutButton = document.getElementById('logout-button');
+
+            // 1. Verificar el estado de la sesión en localStorage
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (loggedOutContainer && loggedInContainer) {
+                if (isLoggedIn) {
+                    // Usuario logueado: Ocultar login/registro y mostrar cerrar sesión
+                    loggedOutContainer.classList.add('d-none');
+                    loggedInContainer.classList.remove('d-none');
+                } else {
+                    // Usuario NO logueado: Mostrar login/registro y ocultar cerrar sesión
+                    loggedOutContainer.classList.remove('d-none');
+                    loggedInContainer.classList.add('d-none');
+                }
+            }
+
+            // 2. Funcionalidad del botón de Cerrar Sesión
+            if (logoutButton) {
+                logoutButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    // Eliminar las variables de sesión de localStorage
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('currentUser');
+
+                    alert('Sesión cerrada correctamente.');
+
+                    // Redirigir a la página de inicio o login
+                    window.location.href = 'Home.html';
+                });
+            }
+        }
+
+        // Llamar a la función inmediatamente al cargar la página
+        updateNavbarAuth();
+
+        //Toast
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    </script>
+
+</body>
+
+</html>

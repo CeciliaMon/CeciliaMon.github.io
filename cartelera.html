@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteleras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar bg-dark navbar-expand-lg border-body z-3" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/teatro.logo.jpg"
+                    class="img-logo d-inline-block align-text-center" width="60px" alt="logo"> Teatro StarLight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="salas.html">Salas</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page"
+                            href="cartelera.html">Cartelera</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="sobre_nosotros.html">Sobre
+                            Nosotros</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <div id="auth-buttons-logged-out">
+                        <a type="button" class="btn btn-danger" href="registro_usuario.html">Registrarse</a>
+                        <a type="button" class="btn btn-secondary" href="inicio_sesion.html">Iniciar Sesion</a>
+                    </div>
+
+                    <div id="auth-buttons-logged-in" class="d-inline-flex d-none">
+                        <a id="logout-button" type="button" class="btn btn-danger" href="#">Cerrar Sesión</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <div class="salas-header text-center text-white py-4">
+        <h1>Carteleras</h1>
+        <p>En esta sección encontrarán nuestras funciones disponibles</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="container py-4">
+        <div class="row justify-content-center g-4">
+            <!-- Card 1 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/hamlet.jpg" class="card-img-top" alt="Hamlet" height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Hamlet</h5>
+                        <p class="card-text">El Príncipe Hamlet recibe la visita del fantasma de su padre, quien le exige venganza por su asesinato a manos de su tío. Abrumado por la duda, Hamlet finge locura mientras planea cómo confirmar la culpa de su tío y enfrentar la corrupción en la corte.</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/misantropo.jpg" class="card-img-top" alt="El Misántropo" height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">El Misántropo de Molière</h5>
+                        <p class="card-text">Alceste, un hombre que odia la falsedad social, está enamorado de Célimène, una joven coqueta y frívola que es todo lo que él desprecia. La comedia se centra en su lucha por forzarla a cambiar y sus conflictos internos con su propia moralidad.</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/romeo_julieta.jpg" class="card-img-top" alt="Romeo y Julieta" height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Romeo y Julieta</h5>
+                        <p class="card-text">Dos familias rivales en Verona, los Montesco y los Capuleto, viven en constante hostilidad. Romeo (Montesco) y Julieta (Capuleto) se encuentran por primera vez en una fiesta y se enamoran intensamente, a pesar de la enemistad que los separa.</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/La-Divina-Comedia-Dante.jpg" class="card-img-top" alt="La Divina Comedia"
+                        height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">La Divina Comedia</h5>
+                        <p class="card-text">El poeta Dante emprende un viaje a través del Infierno, el Purgatorio y el Paraíso. Guiado inicialmente por el poeta Virgilio (representando la Razón), Dante atraviesa los reinos del más allá para confrontar el pecado, buscar la purificación y, finalmente, alcanzar la visión de Dios, guiado por su amor idealizado, Beatriz (representando la Fe).</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/la_gaviota.jpg" class="card-img-top" alt="La Gaviota" height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">La Gaviota</h5>
+                        <p class="card-text">Ambientada en una finca rural, un grupo de artistas lidian con amores no correspondidos, la insatisfacción artística y el paso del tiempo. Gira en torno al joven escritor Konstantín Tréplev, su madre, la famosa actriz Arkádina, y la ingenua aspirante a actriz Nina, cuyos destinos se cruzan en una compleja red de sueños rotos y desilusión.</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-danger text-bg-dark h-100">
+                    <img src="img/el-fantasma-opera.png" class="card-img-top" alt="El Fantasma de la Ópera"
+                        height="250px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">El Fantasma de la Ópera</h5>
+                        <p class="card-text">Un genio musical, conocido como el Fantasma, habita los túneles de la Ópera de París y aterroriza a sus habitantes. Su obsesión es Christine Daaé, una joven y talentosa cantante, a la que instruye en secreto.
+                            Cuando el amor de la infancia de Christine reaparece, el Fantasma desata una tormenta de celos y drama. Un triángulo amoroso fatal que fusiona la música, el misterio y la tragedia en el corazón del teatro.</p>
+                        <a href="comprar_entradas.html" class="btn btn-danger">Comprar Entradas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="#" aria-label="Síguenos en Facebook"><span class="icon-facebook-min"></span></a>
+            <a href="#" aria-label="Síguenos en Instagram"><span class="icon-instagram-min"></span></a>
+            <a href="#" aria-label="Síguenos en X (Twitter)"><span class="icon-twitter-min"></span></a>
+        </div>
+
+        <p class="copyright-minimal">
+            @Copyright Todos los derechos reservados - Teatro StarLight
+        </p>
+
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        // Función para verificar el estado y actualizar el navbar
+        function updateNavbarAuth() {
+            const loggedOutContainer = document.getElementById('auth-buttons-logged-out');
+            const loggedInContainer = document.getElementById('auth-buttons-logged-in');
+            const logoutButton = document.getElementById('logout-button');
+
+            // 1. Verificar el estado de la sesión en localStorage
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (loggedOutContainer && loggedInContainer) {
+                if (isLoggedIn) {
+                    // Usuario logueado: Ocultar login/registro y mostrar cerrar sesión
+                    loggedOutContainer.classList.add('d-none');
+                    loggedInContainer.classList.remove('d-none');
+                } else {
+                    // Usuario NO logueado: Mostrar login/registro y ocultar cerrar sesión
+                    loggedOutContainer.classList.remove('d-none');
+                    loggedInContainer.classList.add('d-none');
+                }
+            }
+
+            // 2. Funcionalidad del botón de Cerrar Sesión
+            if (logoutButton) {
+                logoutButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    // Eliminar las variables de sesión de localStorage
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('currentUser');
+
+                    alert('Sesión cerrada correctamente.');
+
+                    // Redirigir a la página de inicio o login
+                    window.location.href = 'Home.html';
+                });
+            }
+        }
+
+        // Funcionalidad: Proteger la compra si no hay sesión iniciada
+        function protectPurchaseLinks() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            // Selecciona todos los botones de compra (que tienen la clase btn-danger)
+            const purchaseButtons = document.querySelectorAll('.btn-danger');
+
+            if (!isLoggedIn) {
+                // Si el usuario NO está logueado, protegemos los botones de compra.
+                purchaseButtons.forEach(button => {
+                    if (button.closest('.card')) { // Asegúrate de que solo afecte a los botones dentro de las tarjetas
+                        // Revisa si el botón es un enlace de compra y no el botón de navbar
+                        button.addEventListener('click', function (event) {
+                            event.preventDefault(); // Detiene la navegación
+
+                            alert('Debes iniciar sesión para comprar entradas.');
+
+                            // Redirige al usuario a la página de inicio de sesión
+                            window.location.href = 'inicio_sesion.html';
+                        });
+                    }
+                });
+            }
+        }
+
+        // Llamar a ambas funciones al cargar la página
+        updateNavbarAuth();
+        protectPurchaseLinks();
+    </script>
+</body>
+
+</html>

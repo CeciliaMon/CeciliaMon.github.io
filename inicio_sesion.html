@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar bg-dark navbar-expand-lg border-body z-3" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="img/teatro.logo.jpg" class="img-logo d-inline-block align-text-center" width="60px" alt="logo"> Teatro StarLight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="salas.html">Salas</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="cartelera.html">Cartelera</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="sobre_nosotros.html">Sobre Nosotros</a></li>
+        </ul>
+        <span class="navbar-text">
+          <a type="button" class="btn btn-danger me-2" href="registro_usuario.html">Registrarse</a>
+          <a type="button" class="btn btn-secondary" href="inicio_sesion.html">Iniciar Sesión</a>
+        </div>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+    <div class="login-form shadow-sm text-white">
+      <h2 class="text-center mb-4 text-white">Iniciar Sesión</h2>
+
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Nombre de Usuario</label>
+          <input type="text" class="form-control" id="usuario" placeholder="Tu usuario" required>
+        </div>
+
+        <div class="mb-3 position-relative">
+          <label for="password" class="form-label">Contraseña</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Recordarme</label>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-danger px-5" id="liveToastBtn">Ingresar</button>
+        </div>
+
+        <div class="text-center mt-3">
+          <p class="mb-0">¿No tienes cuenta? <a href="registro_usuario.html" class="text-decoration-none text-warning fw-semibold">Regístrate aquí</a></p>
+        </div>
+      </form>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="img/teatro.logo.jpg" class="rounded me-2" alt="..." width="20px">
+        <strong class="me-auto">Teatro StarLight</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Inicio de Sesión 
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="#" aria-label="Síguenos en Facebook"><span class="icon-facebook-min"></span></a>
+            <a href="#" aria-label="Síguenos en Instagram"><span class="icon-instagram-min"></span></a>
+            <a href="#" aria-label="Síguenos en X (Twitter)"><span class="icon-twitter-min"></span></a>
+        </div>
+
+        <p class="copyright-minimal">
+            @Copyright Todos los derechos reservados - Teatro StarLight
+        </p>
+
+    </div>
+</footer>
+
+  <!-- Bootstrap + Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <script>
+   function showToast(title, body, isSuccess = true) {
+        // ... (el cuerpo de tu función showToast() va aquí, sin cambios) ...
+        const toastLiveExample = document.getElementById('liveToast'); 
+        if (!toastLiveExample) return; 
+
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+
+        // 1. Configurar el contenido del Toast
+        toastLiveExample.querySelector('.me-auto').textContent = title;
+        toastLiveExample.querySelector('.toast-body').textContent = body;
+
+        // Opcional: Cambiar la clase del header para un color de éxito/error (usando BG)
+        const toastHeader = toastLiveExample.querySelector('.toast-header');
+        toastHeader.classList.remove('bg-success', 'bg-danger', 'text-white'); 
+        
+        if (isSuccess) {
+            toastHeader.classList.add('bg-success', 'text-white');
+        } else {
+            toastHeader.classList.add('bg-danger', 'text-white');
+        }
+
+        // 2. Mostrar el Toast
+        toastBootstrap.show();
+    }
+
+    // Referencias a elementos del formulario
+    const loginForm = document.querySelector('.login-form form');
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+    
+    // Simplificamos la lógica de referencia al ícono
+    const toggleIcon = togglePassword ? togglePassword.querySelector("i") : null;
+
+    // 1. Funcionalidad de Mostrar/Ocultar Contraseña
+    if (togglePassword) {
+        togglePassword.addEventListener("click", () => {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            if (toggleIcon) {
+                toggleIcon.className = type === "password" ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill';
+            }
+        });
+    }
+
+    // 2. Funcionalidad de Login (Manejo del Envío del Formulario)
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const usuarioInput = document.getElementById('usuario').value.trim();
+        const password = passwordInput.value;
+
+        // Validación de campos vacíos
+        if (!usuarioInput || !password) {
+            showToast('Error de Validación', 'Por favor, introduce tu usuario y contraseña.', false);
+            return;
+        }
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        
+        // Buscar el usuario y validar la contraseña
+        const foundUser = users.find(user => 
+            user.usuario === usuarioInput && user.password === password
+        );
+
+        if (foundUser) {
+            // Éxito en el login: guardar estado y redirigir
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('currentUser', foundUser.usuario); // Guardamos el usuario actual
+
+            // Notificación de éxito
+            showToast('Bienvenido', `¡Has iniciado sesión como ${foundUser.usuario}! Serás redirigido.`, true);
+
+            // Redirige después de un breve retraso para que el usuario vea el Toast
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 1500); 
+            
+        } else {
+            // Error en el login: usuario o contraseña incorrectos
+            showToast('Error de Login', 'Usuario o contraseña incorrectos.', false);
+        }
+    });
+  </script>
+
+</body>
+</html>

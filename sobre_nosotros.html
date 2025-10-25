@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros y Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark navbar-expand-lg border-body z-3" data-bs-theme="dark">
+        <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="img/teatro.logo.jpg" class="img-logo d-inline-block align-text-center" width="60px" alt="logo"> Teatro StarLight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="salas.html">Salas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="cartelera.html">Cartelera</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sobre_nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <div id="auth-buttons-logged-out" class="d-inline-flex">
+                        <a type="button" class="btn btn-danger me-2" href="registro_usuario.html">Registrarse</a>
+                        <a type="button" class="btn btn-secondary" href="inicio_sesion.html">Iniciar Sesión</a>
+                    </div>
+
+                    <div id="auth-buttons-logged-in" class="d-inline-flex d-none">
+                        <button id="logout-button" type="submit" class="btn btn-danger">Cerrar Sesión</button>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-container text-white">
+        <h1 class="text-center mb-4" style="font-family: 'Copperplate Gothic', serif;">Teatro StarLight: Pasión por el
+            Arte</h1>
+
+        <section class="mb-5 p-4 rounded" style="background: rgba(0, 0, 0, 0.3);">
+            <h2 class="h4 mb-3">Historia y Misión</h2>
+            <p>Desde nuestra inauguración en 1950, nos hemos dedicado a ser un faro cultural en la ciudad. Nuestro
+                teatro no solo es una estructura de ladrillo y terciopelo, sino un espacio donde la tradición se
+                encuentra con la innovación.</p>
+            <p>Nuestra misión es llevar las artes escénicas a toda la comunidad, ofreciendo una cartelera diversa que va
+                desde el drama clásico de Shakespeare hasta las vanguardias del teatro experimental.</p>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <p><i class="bi bi-geo-alt-fill me-2"></i>Calle Puerto Verón 523, Ciudad Nieva</p>
+                    <p><i class="bi bi-clock-fill me-2"></i>Martes a Sábado, 10:00 - 18:00 hrs.</p>
+                </div>
+                <div class="col-md-6">
+                    <p><i class="bi bi-telephone-fill me-2"></i>(388) 4289405</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> info@teatrostarlight.com</p>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="text-center mb-4" style="font-family: 'Copperplate Gothic', serif;">Envíanos un Mensaje</h2>
+
+        <div class="contact-form">
+            <form>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nombreContacto" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombreContacto" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="emailContacto" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="emailContacto" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="asuntoContacto" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" id="asuntoContacto" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="mensajeContacto" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensajeContacto" rows="4" required></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-danger px-5" id="liveToastBtn">Enviar Mensaje</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast text-bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="img/teatro.logo.jpg" class="rounded me-2" alt="..." width="20px">
+                    <strong class="me-auto">Teatro Starlight</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Muchas gracias por su mensaje! Lo estamos leyendo :D
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        
+        <div class="social-icons-minimal">
+            <a href="#" aria-label="Síguenos en Facebook"><span class="icon-facebook-min"></span></a>
+            <a href="#" aria-label="Síguenos en Instagram"><span class="icon-instagram-min"></span></a>
+            <a href="#" aria-label="Síguenos en X (Twitter)"><span class="icon-twitter-min"></span></a>
+        </div>
+
+        <p class="copyright-minimal">
+            @Copyright Todos los derechos reservados - Teatro StarLight
+        </p>
+
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Copia y pega aquí el mismo script 'updateNavbarAuth()' que usaste en Home.html
+        function updateNavbarAuth() {
+            const loggedOutContainer = document.getElementById('auth-buttons-logged-out');
+            const loggedInContainer = document.getElementById('auth-buttons-logged-in');
+            const logoutButton = document.getElementById('logout-button');
+
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (loggedOutContainer && loggedInContainer) {
+                if (isLoggedIn) {
+                    loggedOutContainer.classList.add('d-none');
+                    loggedInContainer.classList.remove('d-none');
+                } else {
+                    loggedOutContainer.classList.remove('d-none');
+                    loggedInContainer.classList.add('d-none');
+                }
+            }
+
+            if (logoutButton) {
+                logoutButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('currentUser');
+
+                    alert('Sesión cerrada correctamente.');
+
+                    window.location.href = 'Home.html';
+                });
+            }
+        }
+        updateNavbarAuth();
+
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+
+        // NOTA: Para que el formulario de contacto funcione (envíe el mensaje), 
+        // necesitarías un backend (servidor) o un servicio de formularios externo.
+        // Aquí solo tiene la apariencia visual.
+    </script>
+
+</body>
+
+</html>
